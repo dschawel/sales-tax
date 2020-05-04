@@ -13,33 +13,73 @@ function App() {
   let [chocolate2, setChocolate2] = useState('')
   let [total, setTotal] = useState('')
   let [salestax, setSalesTax] = useState('')
-  // let [purchased, setPurchased] = useState([])
+  let [items, setItems] = useState([])
+  let [purchased, setPurchased] = useState([])
 
   // function to calculate total, sales tax, import tax
   const handleSubmit = e => {
     e.preventDefault()
-    // purchased = [book, musiccd, chocolatebar, chocolate1, chocolate2, perfume1, perfume2, perfume3, headache, chocolate2]
-    // setPurchased(purchased)
+    items = [
+      ["book", book],
+      ["music cd", musiccd],
+      ["chocolate bar", chocolatebar],
+      ["Imported Chocolate", chocolate1],
+      ["Imported Perfume", perfume1],
+      ["Imported Bottle of Perfume", perfume2],
+      ["Bottle of Perfume", perfume3],
+      ["Packet of Headache Pills", headache],
+      ["Imported Box of Chocolate", chocolate2]
+    ]
+    setItems(items)
+    purchased = []
+    if (book) {
+      purchased.push(items[0])
+    }
+    if (musiccd) {
+      purchased.push(items[1])
+    }
+    if (chocolatebar) {
+      purchased.push(items[2])
+    }
+    if (chocolate1) {
+      purchased.push(items[3])
+    }
+    if (perfume1) {
+      purchased.push(items[4])
+    }
+    if (perfume2) {
+      purchased.push(items[5])
+    }
+    if (perfume3) {
+      purchased.push(items[6])
+    }
+    if (headache) {
+      purchased.push(items[7])
+    }
+    if (chocolate2) {
+      purchased.push(items[8])
+    }
+    setPurchased(purchased)
     total = Number(book) + Number(musiccd) + Number(chocolatebar) + Number(chocolate1) + Number(perfume1) + Number(perfume2) + Number(perfume3) + Number(headache) + Number(chocolate2)
     salestax = Number(musiccd * .10) + Number(perfume3 * .10) + Number(chocolate1 * .05) + Number(perfume1 * .15) + Number(perfume2 * .15) + Number(chocolate2 * .05)
     setSalesTax((salestax).toFixed(2))
     setTotal((total + salestax).toFixed(2))
   }
 
-  // Was trying to conditionally render the receipt
-  // let content
-  // if (purchased.length > 0) {
-  //   content = purchased.map((purchase, i) => {
-  //     return (
-  //       <div>
-  //         <h3>Your Receipt</h3>
-  //         <ul>
-  //           <li key={i}>{purchase[i]}: {purchase}</li>
-  //         </ul>
-  //       </div>
-  //     )
-  //   })
-  // }
+  // trying to conditionally render the receipt
+  let content
+  if (purchased) {
+    content = purchased.map((purchase, i) => {
+      return (
+        <div key={i}>
+          <h3>Your Receipt</h3>
+          <p>{purchase}</p>
+          <p>Sales Tax: {salestax}</p>
+          <p>Total: {total}</p> 
+        </div>
+      )
+    })
+  }
 
   //Listing items for sale and form to purchase items
   return (
@@ -97,9 +137,9 @@ function App() {
         <button type="submit">Checkout</button>
       </form>
       <div>
-        {/* {content} */}
-        <h3>Your Receipt</h3>
-          <p>Book: {book}</p>
+        {content}
+        {/* <h3>Your Receipt</h3> */}
+          {/* <p>Book: {book}</p>
           <p>Music CD: {musiccd}</p>
           <p>Chocolate Bar: {chocolatebar}</p>
           <p>Imported Box of Chocolate: {chocolate1}</p>
@@ -108,7 +148,7 @@ function App() {
           <p>Packet of Headache Pills: {headache}</p>
           <p>Imported Box of Chocolates: {chocolate2}</p>
           <p>Sales Tax: {salestax}</p>
-          <p>Total: {total}</p> 
+          <p>Total: {total}</p>  */}
       </div>
     </div>
   );
