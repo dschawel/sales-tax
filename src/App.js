@@ -86,7 +86,7 @@ function App() {
         <li>Book - $12.49</li>
         <li>Music CD - $14.99</li>
         <li>Chocolate Bar - $0.85</li>
-        <li>Imported Box of Choloates - $10.00</li>
+        <li>Imported Box of Chocolates - $10.00</li>
         <li>Imported Bottle of Perfume - $47.50</li>
         <li>Imported Bottle of Perfume - $27.99</li>
         <li>Bottle of perfume - $18.99</li>
