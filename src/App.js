@@ -20,15 +20,15 @@ function App() {
   const handleSubmit = e => {
     e.preventDefault()
     items = [
-      ["book", book],
-      ["music cd", musiccd],
-      ["chocolate bar", chocolatebar],
-      ["Imported Chocolate", chocolate1],
-      ["Imported Perfume", perfume1],
-      ["Imported Bottle of Perfume", perfume2],
-      ["Bottle of Perfume", perfume3],
-      ["Packet of Headache Pills", headache],
-      ["Imported Box of Chocolate", chocolate2]
+      ["book",- book],
+      ["music cd",- musiccd],
+      ["chocolate bar",- chocolatebar],
+      ["Imported Chocolate",- chocolate1],
+      ["Imported Perfume",- perfume1],
+      ["Imported Bottle of Perfume",- perfume2],
+      ["Bottle of Perfume",- perfume3],
+      ["Packet of Headache Pills",- headache],
+      ["Imported Box of Chocolate",- chocolate2]
     ]
     setItems(items)
     purchased = []
@@ -66,7 +66,7 @@ function App() {
     setTotal((total + salestax).toFixed(2))
   }
 
-  // trying to conditionally render the receipt
+  // conditionally render the receipt
   let content
   if (purchased) {
     content = purchased.map((purchase, i) => {
@@ -138,16 +138,6 @@ function App() {
         {content}
         <p>Sales Tax: {salestax}</p>
         <p>Total: {total}</p>
-          {/* <p>Book: {book}</p>
-          <p>Music CD: {musiccd}</p>
-          <p>Chocolate Bar: {chocolatebar}</p>
-          <p>Imported Box of Chocolate: {chocolate1}</p>
-          <p>Imported Bottle of Perfume: {perfume1}</p>
-          <p>Imported Bottle of Perfume: {perfume2}</p>
-          <p>Packet of Headache Pills: {headache}</p>
-          <p>Imported Box of Chocolates: {chocolate2}</p>
-          <p>Sales Tax: {salestax}</p>
-          <p>Total: {total}</p>  */}
       </div>
     </div>
   );
