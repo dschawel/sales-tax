@@ -1,5 +1,8 @@
-# Fork and Clone the repository
+# Step 1
+Fork and Clone the repository
 
-## type npm i in the terminal to install dependencies
+# Step 2
+Type npm i in the terminal to install dependencies
 
-### type npm start in the terminal to open in browser
+# Step 3
+Type npm start in the terminal to open in browser
