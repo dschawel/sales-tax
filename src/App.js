@@ -26,6 +26,7 @@ function App() {
     setTotal((total + salestax).toFixed(2))
   }
 
+  // Was trying to conditionally render the receipt
   // let content
   // if (purchased.length > 0) {
   //   content = purchased.map((purchase, i) => {
