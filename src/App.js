@@ -21,14 +21,14 @@ function App() {
     e.preventDefault()
     items = [
       ["book",- book],
-      ["music cd",- musiccd],
+      ["music cd",- Number(Number(musiccd)+Number(musiccd * .10)).toFixed(2)],
       ["chocolate bar",- chocolatebar],
-      ["Imported Chocolate",- chocolate1],
-      ["Imported Perfume",- perfume1],
-      ["Imported Bottle of Perfume",- perfume2],
-      ["Bottle of Perfume",- perfume3],
+      ["Imported Chocolate",- Number(Number(chocolate1)+Number(chocolate1 * .05)).toFixed(2)],
+      ["Imported Perfume",- Number(Number(perfume1)+Number(perfume1 * .15)).toFixed(2)],
+      ["Imported Bottle of Perfume",- Number(Number(perfume2)+Number(perfume2 * .15)).toFixed(2)],
+      ["Bottle of Perfume",- Number(Number(perfume3)+Number(perfume3 * .10)).toFixed(2)],
       ["Packet of Headache Pills",- headache],
-      ["Imported Box of Chocolate",- chocolate2]
+      ["Imported Box of Chocolate",- Number(Number(chocolate2)+Number(chocolate2 * .05)).toFixed(2)]
     ]
     setItems(items)
     purchased = []
@@ -63,7 +63,7 @@ function App() {
     total = Number(book) + Number(musiccd) + Number(chocolatebar) + Number(chocolate1) + Number(perfume1) + Number(perfume2) + Number(perfume3) + Number(headache) + Number(chocolate2)
     salestax = Number(musiccd * .10) + Number(perfume3 * .10) + Number(chocolate1 * .05) + Number(perfume1 * .15) + Number(perfume2 * .15) + Number(chocolate2 * .05)
     setSalesTax((salestax).toFixed(2))
-    setTotal((total + salestax).toFixed(2))
+    setTotal((total+salestax).toFixed(2))
   }
 
   // conditionally render the receipt
