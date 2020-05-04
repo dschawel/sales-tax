@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Container, Row, Col } from 'reactstrap';
 import './App.css';
 
 function App() {
@@ -81,64 +82,74 @@ function App() {
   //Listing items for sale and form to purchase items
   return (
     <div className="App">
-      <h1>Items for Sale</h1>
-      <ul>
-        <li>Book - $12.49</li>
-        <li>Music CD - $14.99</li>
-        <li>Chocolate Bar - $0.85</li>
-        <li>Imported Box of Chocolates - $10.00</li>
-        <li>Imported Bottle of Perfume - $47.50</li>
-        <li>Imported Bottle of Perfume - $27.99</li>
-        <li>Bottle of perfume - $18.99</li>
-        <li>Packed of headache pills - $9.75</li>
-        <li>Imported box of chocolates - $11.25</li>
-      </ul>
-      <h3>What would you like to buy?</h3>
-      <form onSubmit={handleSubmit}>
-        <div>
-        <label>Book: </label>
-        <input id="book" name="book" placeholder="$0.00" onChange={e => setBook(e.target.value)}></input>
-        </div>
-        <div>
-        <label>Music CD: </label>
-        <input id="musiccd" name="musiccd" placeholder="$0.00" onChange={e => setMusicCD(e.target.value)}></input>
-        </div>
-        <div>
-        <label>Chocolate Bar: </label>
-        <input id="chocolatebar" name="chocolatebar" placeholder="$0.00" onChange={e => setChocolateBar(e.target.value)}></input>
-        </div>
-        <div>
-        <label>Imported Box of Chocolates: </label>
-        <input id="chocolate1" name="chocolate1" placeholder="$0.00" onChange={e => setChocolate1(e.target.value)}></input>
-        </div>
-        <div>
-        <label>Imported Bottle of Perfume: </label>
-        <input id="perfume1" name="perfume1" placeholder="$0.00" onChange={e => setPerfume1(e.target.value)}></input>
-        </div>
-        <div>
-        <label>Imported Bottle of Perfume: </label>
-        <input id="perfume2" name="perfume2" placeholder="$0.00" onChange={e => setPerfume2(e.target.value)}></input>
-        </div>
-        <div>
-        <label>Bottle of Perfume: </label>
-        <input id="perfume3" name="perfume3" placeholder="$0.00" onChange={e => setPerfume3(e.target.value)}></input>
-        </div>
-        <div>
-        <label>Packet of Headache Pills: </label>
-        <input id="headache" name="headache" placeholder="$0.00" onChange={e => setHeadache(e.target.value)}></input>
-        </div>
-        <div>
-        <label>Imported Box of Chocolates: </label>
-        <input id="chocolate2" name="chocolate2" placeholder="$0.00" onChange={e => setChocolate2(e.target.value)}></input>
-        </div>
-        <button type="submit">Checkout</button>
-      </form>
-      <div>
-        <h3>Your Receipt</h3>
-        {content}
-        <p>Sales Tax: {salestax}</p>
-        <p>Total: {total}</p>
-      </div>
+      <Container>
+        <Row>
+          <Col xs="4">
+            <h3>Items for Sale</h3>
+            <ul>
+              <li>Book - $12.49</li>
+              <li>Music CD - $14.99</li>
+              <li>Chocolate Bar - $0.85</li>
+              <li>Imported Box of Chocolates - $10.00</li>
+              <li>Imported Bottle of Perfume - $47.50</li>
+              <li>Imported Bottle of Perfume - $27.99</li>
+              <li>Bottle of perfume - $18.99</li>
+              <li>Packed of headache pills - $9.75</li>
+              <li>Imported box of chocolates - $11.25</li>
+            </ul>
+          </Col>
+          <Col xs="5">
+            <h4>What would you like to buy?</h4>
+            <form onSubmit={handleSubmit}>
+              <div>
+              <label>Book:</label>
+              <input id="book" name="book" placeholder="$0.00" onChange={e => setBook(e.target.value)}></input>
+              </div>
+              <div>
+              <label>Music CD:</label>
+              <input id="musiccd" name="musiccd" placeholder="$0.00" onChange={e => setMusicCD(e.target.value)}></input>
+              </div>
+              <div>
+              <label>Chocolate Bar:</label>
+              <input id="chocolatebar" name="chocolatebar" placeholder="$0.00" onChange={e => setChocolateBar(e.target.value)}></input>
+              </div>
+              <div>
+              <label>Imported Box of Chocolates:</label>
+              <input id="chocolate1" name="chocolate1" placeholder="$0.00" onChange={e => setChocolate1(e.target.value)}></input>
+              </div>
+              <div>
+              <label>Imported Bottle of Perfume:</label>
+              <input id="perfume1" name="perfume1" placeholder="$0.00" onChange={e => setPerfume1(e.target.value)}></input>
+              </div>
+              <div>
+              <label>Imported Bottle of Perfume:</label>
+              <input id="perfume2" name="perfume2" placeholder="$0.00" onChange={e => setPerfume2(e.target.value)}></input>
+              </div>
+              <div>
+              <label>Bottle of Perfume:</label>
+              <input id="perfume3" name="perfume3" placeholder="$0.00" onChange={e => setPerfume3(e.target.value)}></input>
+              </div>
+              <div>
+              <label>Packet of Headache Pills:</label>
+              <input id="headache" name="headache" placeholder="$0.00" onChange={e => setHeadache(e.target.value)}></input>
+              </div>
+              <div>
+              <label>Imported Box of Chocolates:</label>
+              <input id="chocolate2" name="chocolate2" placeholder="$0.00" onChange={e => setChocolate2(e.target.value)}></input>
+              </div>
+              <button id="submit" type="submit">Checkout</button>
+            </form>
+          </Col>
+          <Col xs="3">
+            <div>
+              <h3>Your Receipt</h3>
+              {content}
+              <p>Sales Tax: {salestax}</p>
+              <p>Total: {total}</p>
+            </div>
+            </Col>
+        </Row>
+      </Container>
     </div>
   );
 }

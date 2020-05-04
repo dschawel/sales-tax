@@ -1,6 +1,12 @@
 .App {
   text-align: left;
-  margin-left: 20px;
+  margin-top: 20px;
 }
 
+#submit {
+  background-color: green;
+  color: white;
+  font-weight: 600;
+  height: 2em;
+}
 
