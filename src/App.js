@@ -72,10 +72,7 @@ function App() {
     content = purchased.map((purchase, i) => {
       return (
         <div key={i}>
-          <h3>Your Receipt</h3>
-          <p>{purchase}</p>
-          <p>Sales Tax: {salestax}</p>
-          <p>Total: {total}</p> 
+          <p>{purchase}</p> 
         </div>
       )
     })
@@ -137,8 +134,10 @@ function App() {
         <button type="submit">Checkout</button>
       </form>
       <div>
+        <h3>Your Receipt</h3>
         {content}
-        {/* <h3>Your Receipt</h3> */}
+        <p>Sales Tax: {salestax}</p>
+        <p>Total: {total}</p>
           {/* <p>Book: {book}</p>
           <p>Music CD: {musiccd}</p>
           <p>Chocolate Bar: {chocolatebar}</p>
