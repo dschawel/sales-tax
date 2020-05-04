@@ -13,8 +13,9 @@ function App() {
   let [chocolate2, setChocolate2] = useState('')
   let [total, setTotal] = useState('')
   let [salestax, setSalesTax] = useState('')
-  // let [purchased, setPurchased] = useState({})
+  // let [purchased, setPurchased] = useState([])
 
+  // function to calculate total, sales tax, import tax
   const handleSubmit = e => {
     e.preventDefault()
     // purchased = [book, musiccd, chocolatebar, chocolate1, chocolate2, perfume1, perfume2, perfume3, headache, chocolate2]
@@ -39,6 +40,7 @@ function App() {
   //   })
   // }
 
+  //Listing items for sale and form to purchase items
   return (
     <div className="App">
       <h1>Items for Sale</h1>
